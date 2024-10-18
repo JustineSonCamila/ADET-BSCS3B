@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>User Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <h1>Hello, {{ user_details.name }}!</h1>
+            <p><strong>Full Name:</strong> {{ user_details.name }} {{ user_details.middle_name }} {{ user_details.last_name }}</p>
+            <p><strong>Age:</strong> {{ user_details.age }}</p>
+            <p><strong>Email:</strong> {{ user_details.email }}</p>
+            <p><strong>Contact:</strong> {{ user_details.contact }}</p>
+            <p><strong>Address:</strong> {{ user_details.address }}</p>
+            <a class="logout-button" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
