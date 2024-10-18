@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register/Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the App</h1>
+    </header>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Your form code goes here -->
+        <form method="POST">
+            <!-- Add your form inputs here -->
+            <!-- Example: -->
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="midname" placeholder="Middle Name">
+            <input type="text" name="last_name" placeholder="Last Name">
+            <input type="number" name="age" placeholder="Age">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="contact" placeholder="Contact">
+            <input type="text" name="address" placeholder="Address">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
